@@ -1,0 +1,60 @@
+.shadow-container {
+  box-shadow: 0px 0px 80px rgba(0, 0, 0, 0.07);
+}
+
+.nav-span {
+  background-color: transparent;
+  position: relative;
+  color: #0077cc;
+}
+.nav-span::before {
+  width: 0%;
+  height: 5%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #0077cc;
+  z-index: -1;
+  content: "";
+  transition: all 0.3s ease-in;
+}
+.nav-span:hover::before {
+  width: 100%;
+}
+/* for white */
+.nav-span-white {
+  background-color: transparent;
+  position: relative;
+  color: white;
+}
+.nav-span-white::before {
+  width: 0%;
+  height: 5%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  z-index: -1;
+  content: "";
+  transition: all 0.3s ease-in;
+}
+.nav-span-white:hover::before {
+  width: 100%;
+}
+
+/* icons css fill color changes */
+#react:hover,
+#angular:hover,
+#java:hover,
+#github:hover,
+#mysql:hover,
+#html:hover,
+#css:hover,
+#js:hover,
+#scss:hover,
+#figma:hover,
+#mongodb:hover,
+#python:hover {
+  fill: white;
+}
+/* icons css fill color changes */
