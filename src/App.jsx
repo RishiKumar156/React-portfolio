@@ -8,6 +8,7 @@ import Resort from "../src/assets/resort.png";
 import TapTap from "../src/assets/g1.jpg";
 import IntroMe from "../src/assets/work-office.gif";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
+import MeAc from "../src/assets/withac.jpg";
 import "./App.css";
 export default function App() {
   const [isSticky, setIsSticky] = useState(false);
@@ -135,54 +136,58 @@ export default function App() {
         </div>
       </div>
       {/* Home section */}
-      {/* services section */}
-      <div className="flex h-[70vh] flex-col relative">
-        <h1 className="font-semibold text-[#0077cc] absolute top-[1rem] left-[3rem] text-[2rem]">
-          Projects
-        </h1>
-        <MdChevronLeft
-          onClick={slideLeft}
-          className="rounded-full opacity-50 hover:opacity-100 bg-[#0077cc] text-white transition duration-300 absolute top-[14rem] left-[2rem] cursor-pointer z-10"
-          size={40}
-        />
-        <div
-          id={"slider"}
-          className="flex w-[100%] h-[100%] group items-center pt-[6rem] pb-[3rem] px-[4rem] overflow-x-scroll scroll-smooth scrollbar-hide relative"
-        >
-          <div className="flex h-[100%]">
-            {projects.map((item, idx) => (
-              <div className="relative mx-[2rem]" key={idx}>
-                <div
-                  style={{
-                    background: `url(${item.image})`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                  }}
-                  className="w-[50rem] h-[100%]"
-                >
-                  <a
-                    className="absolute left-0 top-0 w-full h-full flex cursor-pointer items-center justify-center transition-all duration-300 hover:bg-[#0000008f]"
-                    href={`${item.link}`}
-                    target="_blank"
-                  >
-                    <p className="text-[transparent] w-full h-full flex justify-center items-center font-bold hover:text-[white]">
-                      {item.name}
-                    </p>
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
+      {/* about seciton */}
+      <div className="flex w-[100%] h-[100vh]">
+        <div className="flex w-[100%] h-[100%] p-[5rem] justify-start items-start flex-col ">
+          <h1 className="text-[#0077cc] text-[2rem] font-semibold ">
+            About Me
+          </h1>
+          <ul className="flex flex-col w-[100%] h-[100%] mt-[2rem]">
+            <li className="mb-[1rem]" style={{ textAlign: "left" }}>
+              Hello, I'm
+              <span className="text-[#0077cc] font-semibold "> Rishik</span>, a
+              dedicated Frontend Development Engineer (FDE) deeply immersed in
+              the world of web development. Proficient in Python and adept at
+              solving LeetCode problems, my journey in programming has been
+              marked by impactful projects and valuable experiences.
+            </li>
+            <li className="mb-[1rem]" style={{ textAlign: "left" }}>
+              I've served as a Software Development Engineer at
+              <span className="text-[#0077cc] font-semibold "> Kranium</span>,
+              contributing innovative solutions and gaining valuable insights.
+              Currently, I'm a Junior Developer at
+              <span className="text-[#0077cc] font-semibold "> Svarm</span>,
+              where I continue to explore new challenges and learning
+              opportunities.
+            </li>
+            <li style={{ textAlign: "left" }}>
+              Passionate about coding, I find joy in crafting seamless user
+              experiences and delving into the intricacies of backend
+              development. Beyond the professional realm, I enjoy tackling
+              real-world problems through creative and efficient solutions.
+              Excited about the endless possibilities in the ever-evolving tech
+              landscape, I look forward to the continuous exploration of my
+              skills and knowledge.
+            </li>
+            <button className="px-[1rem] py-[0.5rem] text-[#0077cc] rounded font-semibold border border-[#0077cc] hover:bg-[#0077cc] transition-all duration-300 hover:text-[white]  my-[2rem]">
+              Resume
+            </button>
+          </ul>
         </div>
-        <MdChevronRight
-          onClick={slideRight}
-          className="rounded-full opacity-50 hover:opacity-100 bg-[#0077cc] text-white transition duration-300 absolute top-[14rem] right-[2rem] cursor-pointer z-10"
-          size={40}
-        />
+        <div className="flex w-[100%] h-[100%] flex-col justify-center items-center">
+          <div
+            style={{
+              "clip-path": "polygon(0 71%, 0 0, 100% 0, 100% 70%, 52% 100%)",
+              background: `url(${TapTap})`,
+              backgroundSize: "cover",
+              backgroundPositionY: "-11rem",
+            }}
+            className="flex w-[50%] h-[50%]"
+          ></div>
+        </div>
       </div>
-
-      {/* services section */}
       {/* about section */}
+      {/* skills sections */}
       <div className="flex w-[100%] h-[100vh] bg-[#0077cc]">
         <div className="flex w-[100%] h-[100%] flex-col items-start justify-center">
           <h1 className="text-[white] font-[700] text-[2rem] ml-[2.5rem] mb-[1rem] ">
@@ -279,59 +284,142 @@ export default function App() {
           </div>
         </div>
       </div>
-      {/* about seciton */}
-      <div className="flex w-[100%] h-[100vh]">
-        <div className="flex w-[100%] h-[100%] p-[5rem] justify-start items-start flex-col ">
-          <h1 className="text-[#0077cc] text-[2rem] font-semibold ">
-            About Me
-          </h1>
-          <ul className="flex flex-col w-[100%] h-[100%] mt-[2rem]">
-            <li className="mb-[1rem]" style={{ textAlign: "left" }}>
-              Hello, I'm{" "}
-              <span className="text-[#0077cc] font-semibold ">Rishik</span>, a
-              dedicated Frontend Development Engineer (FDE) deeply immersed in
-              the world of web development. Proficient in Python and adept at
-              solving LeetCode problems, my journey in programming has been
-              marked by impactful projects and valuable experiences.
-            </li>
-            <li className="mb-[1rem]" style={{ textAlign: "left" }}>
-              I've served as a Software Development Engineer at
-              <span className="text-[#0077cc] font-semibold "> Kranium</span>,
-              contributing innovative solutions and gaining valuable insights.
-              Currently, I'm a Junior Developer at{" "}
-              <span className="text-[#0077cc] font-semibold "> Svarm</span>,
-              where I continue to explore new challenges and learning
-              opportunities.
-            </li>
-            <li style={{ textAlign: "left" }}>
-              Passionate about coding, I find joy in crafting seamless user
-              experiences and delving into the intricacies of backend
-              development. Beyond the professional realm, I enjoy tackling
-              real-world problems through creative and efficient solutions.
-              Excited about the endless possibilities in the ever-evolving tech
-              landscape, I look forward to the continuous exploration of my
-              skills and knowledge.
-            </li>
-            <button className="px-[1rem] py-[0.5rem] text-[#0077cc] rounded font-semibold border border-[#0077cc] hover:bg-[#0077cc] transition-all duration-300 hover:text-[white]  my-[2rem]">
-              Resume
-            </button>
-          </ul>
+      {/* skills sections */}
+      {/* services section */}
+      <div className="flex h-[70vh] flex-col relative">
+        <h1 className="font-semibold text-[#0077cc] absolute top-[1rem] left-[3rem] text-[2rem]">
+          Projects
+        </h1>
+        <MdChevronLeft
+          onClick={slideLeft}
+          className="rounded-full opacity-50 hover:opacity-100 bg-[#0077cc] text-white transition duration-300 absolute top-[14rem] left-[2rem] cursor-pointer z-10"
+          size={40}
+        />
+        <div
+          id={"slider"}
+          className="flex w-[100%] h-[100%] group items-center pt-[6rem] pb-[3rem] px-[4rem] overflow-x-scroll scroll-smooth scrollbar-hide relative"
+        >
+          <div className="flex h-[100%]">
+            {projects.map((item, idx) => (
+              <div className="relative mx-[2rem]" key={idx}>
+                <div
+                  style={{
+                    background: `url(${item.image})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                  }}
+                  className="w-[50rem] h-[100%]"
+                >
+                  <a
+                    className="absolute left-0 top-0 w-full h-full flex cursor-pointer items-center justify-center transition-all duration-300 hover:bg-[#0000008f]"
+                    href={`${item.link}`}
+                    target="_blank"
+                  >
+                    <p className="text-[transparent] w-full h-full flex justify-center items-center font-bold hover:text-[white]">
+                      {item.name}
+                    </p>
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="flex w-[100%] h-[100%] flex-col justify-center items-center">
-          <div
-            style={{
-              "clip-path": "polygon(0 71%, 0 0, 100% 0, 100% 70%, 52% 100%)",
-              background: `url(${TapTap})`,
-              backgroundSize: "cover",
-              backgroundPositionY: "-11rem",
-            }}
-            className="flex w-[50%] h-[50%]"
-          ></div>
-        </div>
+        <MdChevronRight
+          onClick={slideRight}
+          className="rounded-full opacity-50 hover:opacity-100 bg-[#0077cc] text-white transition duration-300 absolute top-[14rem] right-[2rem] cursor-pointer z-10"
+          size={40}
+        />
       </div>
+      {/* services section */}
       {/* about seciton */}
       {/* contact section */}
-      <div className="flex w-[100%] h-[100vh] bg-[#0077cc] "></div>
+      <div className="flex flex-col justify-center items-center w-[100%] h-[100vh] bg-[#0077cc] relative px-[5rem] ">
+        <div className="flex items-center justify-evenly w-[60%] h-[13vh] bg-[white] rounded-lg">
+          <p className="font-bold">Start a Project</p>
+          <span>Interested in Working Together ??</span>
+          <button className="transition-all duration-300 hover:bg-[#0077cc] hover:text-white font-bold  border-2 border-[#0077cc] px-[1rem] py-[0.5rem] rounded">
+            Let's get started
+          </button>
+        </div>
+        <div className="flex justify-center mt-[2rem] items-center px-[15rem] w-[100%] h-[50%]">
+          <div className="flex items-center justify-center w-[100%] h-[100%]">
+            <svg
+              id="linkedin"
+              className="bg-[white] transition-all duration-300 w-[3rem] h-[3rem] p-[0.2rem] rounded m-[1rem] hover:bg-[#0077cc] hover:text-[white] cursor-pointer "
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 448 512"
+              fill="#0077cc"
+            >
+              <path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z" />
+            </svg>
+            <svg
+              id="github"
+              className="bg-[white] transition-all duration-300 w-[3rem] h-[3rem] p-[0.1rem] rounded m-[1rem] hover:bg-[#0077cc] hover:text-[white] cursor-pointer "
+              fill="#0077cc"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 480 512"
+            >
+              <path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z" />
+            </svg>
+            <svg
+              id="insta"
+              className="bg-[white] transition-all duration-300 w-[3rem] h-[3rem] p-[0.1rem] rounded m-[1rem] hover:bg-[#0077cc] hover:text-[white] cursor-pointer "
+              fill="#0077cc"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 448 512"
+            >
+              <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+            </svg>
+            <svg
+              id="whats"
+              className="bg-[white] transition-all duration-300 w-[3rem] h-[3rem] p-[0.1rem] rounded m-[1rem] hover:bg-[#0077cc] hover:text-[white] cursor-pointer "
+              fill="#0077cc"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 448 512"
+            >
+              <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+            </svg>
+          </div>
+          <div className="flex items-center justify-center w-[100%] h-[100%]">
+            <form className="flex flex-col w-[100%] h-[100%] justify-center items-center">
+              <input
+                className="w-[80%] py-[0.5rem] px-[1rem] m-[1rem] rounded-sm "
+                type="text"
+                placeholder="Name"
+              />
+              <input
+                className="w-[80%] py-[0.5rem] px-[1rem] m-[1rem] rounded-sm "
+                type="text"
+                name=""
+                placeholder="Subject"
+                id=""
+              />
+              <textarea
+                className="w-[80%] h-[50%] py-[0.5rem] px-[1rem] m-[1rem] rounded-sm "
+                type="text"
+                name=""
+                placeholder="Message"
+                id=""
+              />
+              <button
+                style={{ border: "1px solid white" }}
+                className="rocket-btn rounded-sm flex group items-center transition-all text-[1rem] duration-300  w-[80%] justify-center px-[1rem] h-[13%] text-white py-[0.5rem] font-semibold hover:text-[#0077cc] hover:bg-[white] "
+              >
+                send
+                <svg
+                  id="rocket"
+                  className="transition-all duration-300 w-[2rem] h-[2rem] p-[0.1rem] m-[1rem] cursor-pointer "
+                  fill="white"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 576 512"
+                >
+                  <path d="M284 224.8a34.1 34.1 0 1 0 34.3 34.1A34.2 34.2 0 0 0 284 224.8zm-110.5 0a34.1 34.1 0 1 0 34.3 34.1A34.2 34.2 0 0 0 173.6 224.8zm220.9 0a34.1 34.1 0 1 0 34.3 34.1A34.2 34.2 0 0 0 394.5 224.8zm153.8-55.3c-15.5-24.2-37.3-45.6-64.7-63.6-52.9-34.8-122.4-54-195.7-54a406 406 0 0 0 -72 6.4 238.5 238.5 0 0 0 -49.5-36.6C99.7-11.7 40.9 .7 11.1 11.4A14.3 14.3 0 0 0 5.6 34.8C26.5 56.5 61.2 99.3 52.7 138.3c-33.1 33.9-51.1 74.8-51.1 117.3 0 43.4 18 84.2 51.1 118.1 8.5 39-26.2 81.8-47.1 103.5a14.3 14.3 0 0 0 5.6 23.3c29.7 10.7 88.5 23.1 155.3-10.2a238.7 238.7 0 0 0 49.5-36.6A406 406 0 0 0 288 460.1c73.3 0 142.8-19.2 195.7-54 27.4-18 49.1-39.4 64.7-63.6 17.3-26.9 26.1-55.9 26.1-86.1C574.4 225.4 565.6 196.4 548.3 169.5zM285 409.9a345.7 345.7 0 0 1 -89.4-11.5l-20.1 19.4a184.4 184.4 0 0 1 -37.1 27.6 145.8 145.8 0 0 1 -52.5 14.9c1-1.8 1.9-3.6 2.8-5.4q30.3-55.7 16.3-100.1c-33-26-52.8-59.2-52.8-95.4 0-83.1 104.3-150.5 232.8-150.5s232.9 67.4 232.9 150.5C517.9 342.5 413.6 409.9 285 409.9z" />
+                </svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
       {/* contact section */}
     </div>
   );
